@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "c6409795-7ab0-46cd-836c-3c2a23b03642",
+		"name": "Dog CEO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/breeds/list/all",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"breeds",
+						"list",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sub breeds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/breed/hound/list",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"breed",
+						"hound",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Breed by Images",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/breed/hound/images",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"breed",
+						"hound",
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Random Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/breeds/image/random",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"breeds",
+						"image",
+						"random"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
