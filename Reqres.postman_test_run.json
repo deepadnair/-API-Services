@@ -1,0 +1,326 @@
+{
+	"id": "64ddc61f-efd5-45f5-a363-ffdd94a114e6",
+	"name": "Reqres",
+	"timestamp": "2021-04-29T16:31:46.824Z",
+	"collection_id": "dd04f0a7-ffeb-4b6e-b6c9-8985b823b099",
+	"folder_id": 0,
+	"environment_id": "1a3b5697-1dd9-4975-b5bd-c32a796f38d0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "552785cd-3967-4c8f-a618-9e6c9215fc24",
+			"name": "Single User",
+			"url": "https://reqres.in/api/users/2",
+			"time": 108,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				108
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4455c377-828b-44e5-9665-2553c0ea67d2",
+			"name": "List User",
+			"url": "https://reqres.in/api/users?page=2%0A",
+			"time": 267,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				267
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7f563d67-49f0-4327-93f8-3878ccdfc35d",
+			"name": "Single User Not Found",
+			"url": "https://reqres.in/api/users/23%0A",
+			"time": 294,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				294
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "64de119a-8777-4af2-a698-b6184a727055",
+			"name": "RequestUnknown",
+			"url": "https://reqres.in/api/unknown/3",
+			"time": 238,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				238
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "172701b2-40eb-4338-acd2-6ba41d7ec24e",
+			"name": "RequestUnknown Not Found",
+			"url": "https://reqres.in/api/unknown/100",
+			"time": 218,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				218
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f5c622e5-34cd-478a-b1c1-754c73494ade",
+			"name": "PostRequest",
+			"url": "https://reqres.in/api/users",
+			"time": 217,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				217
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ed43543b-feb9-4f68-91be-79df223552f7",
+			"name": "UpdateRequest",
+			"url": "https://reqres.in/api/users/2",
+			"time": 218,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				218
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a09c9c4e-4dcb-46df-a489-ca9dd7a2f312",
+			"name": "Update",
+			"url": "https://reqres.in/api/users/7",
+			"time": 221,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				221
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "051124e6-4d9d-4d9c-aa06-7484a38fb0db",
+			"name": "User",
+			"url": "https://reqres.in/api/user/3",
+			"time": 222,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				222
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "abf77a7e-7a60-4c8d-aab6-141ab66707a1",
+			"name": "Register",
+			"url": "https://reqres.in/api/register",
+			"time": 255,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				255
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8baa19cb-ff3c-42a3-ab65-ae4f82f79ad6",
+			"name": "Login",
+			"url": "https://reqres.in/api/login",
+			"time": 215,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				215
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9884b4da-efc6-4d5f-bdf4-6abfbd429431",
+			"name": "Login Unsuccessful",
+			"url": "https://reqres.in/api/login",
+			"time": 159,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				159
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "20f0bcd6-6e39-4d77-8d12-dce83606da0f",
+			"name": "Register Unsuccessfu,",
+			"url": "https://reqres.in/api/register",
+			"time": 154,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				154
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1b9e4fea-b1e0-46fd-aa4e-0ecb05bdc7b3",
+			"name": "Delay Response",
+			"url": "https://reqres.in/api/users?delay=10",
+			"time": 10224,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10224
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 13010,
+	"collection": {
+		"requests": [
+			{
+				"id": "552785cd-3967-4c8f-a618-9e6c9215fc24",
+				"method": "GET"
+			},
+			{
+				"id": "4455c377-828b-44e5-9665-2553c0ea67d2",
+				"method": "GET"
+			},
+			{
+				"id": "7f563d67-49f0-4327-93f8-3878ccdfc35d",
+				"method": "GET"
+			},
+			{
+				"id": "64de119a-8777-4af2-a698-b6184a727055",
+				"method": "GET"
+			},
+			{
+				"id": "172701b2-40eb-4338-acd2-6ba41d7ec24e",
+				"method": "GET"
+			},
+			{
+				"id": "f5c622e5-34cd-478a-b1c1-754c73494ade",
+				"method": "POST"
+			},
+			{
+				"id": "ed43543b-feb9-4f68-91be-79df223552f7",
+				"method": "PUT"
+			},
+			{
+				"id": "a09c9c4e-4dcb-46df-a489-ca9dd7a2f312",
+				"method": "PATCH"
+			},
+			{
+				"id": "051124e6-4d9d-4d9c-aa06-7484a38fb0db",
+				"method": "DELETE"
+			},
+			{
+				"id": "abf77a7e-7a60-4c8d-aab6-141ab66707a1",
+				"method": "POST"
+			},
+			{
+				"id": "8baa19cb-ff3c-42a3-ab65-ae4f82f79ad6",
+				"method": "POST"
+			},
+			{
+				"id": "9884b4da-efc6-4d5f-bdf4-6abfbd429431",
+				"method": "POST"
+			},
+			{
+				"id": "20f0bcd6-6e39-4d77-8d12-dce83606da0f",
+				"method": "POST"
+			},
+			{
+				"id": "1b9e4fea-b1e0-46fd-aa4e-0ecb05bdc7b3",
+				"method": "GET"
+			}
+		]
+	}
+}
