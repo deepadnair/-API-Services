@@ -7,13 +7,26 @@
 	"item": [
 		{
 			"name": "List All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}api/breeds/list/all",
+					"raw": "{{dogurl}}api/breeds/list/all",
 					"host": [
-						"{{url}}api"
+						"{{dogurl}}api"
 					],
 					"path": [
 						"breeds",
@@ -26,13 +39,26 @@
 		},
 		{
 			"name": "Sub breeds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}api/breed/hound/list",
+					"raw": "{{dogurl}}api/breed/hound/list",
 					"host": [
-						"{{url}}api"
+						"{{dogurl}}api"
 					],
 					"path": [
 						"breed",
@@ -45,13 +71,26 @@
 		},
 		{
 			"name": "Breed by Images",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}api/breed/hound/images",
+					"raw": "{{dogurl}}api/breed/hound/images",
 					"host": [
-						"{{url}}api"
+						"{{dogurl}}api"
 					],
 					"path": [
 						"breed",
@@ -64,13 +103,26 @@
 		},
 		{
 			"name": "Random Image",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}api/breeds/image/random",
+					"raw": "{{dogurl}}api/breeds/image/random",
 					"host": [
-						"{{url}}api"
+						"{{dogurl}}api"
 					],
 					"path": [
 						"breeds",
