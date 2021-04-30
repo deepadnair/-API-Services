@@ -7,17 +7,36 @@
 	"item": [
 		{
 			"name": "GET single Pet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//verify Status Code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check if user with id 1 present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(\"Teste\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/pet/11",
+					"raw": "{{peturl}}/pet/{{id}}",
 					"host": [
-						"{{url}}"
+						"{{peturl}}"
 					],
 					"path": [
 						"pet",
-						"11"
+						"{{id}}"
 					]
 				}
 			},
@@ -25,12 +44,29 @@
 		},
 		{
 			"name": "ADD PET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check if user with id2 present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(\"doggie\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\":2,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"Pet\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"DobberMan\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 2,\r\n      \"name\": \"Tommer\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"raw": "{\r\n  \"id\":1,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Pet\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"DobberMan\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"Tommer\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -38,9 +74,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/pet",
+					"raw": "{{peturl}}/pet",
 					"host": [
-						"{{url}}"
+						"{{peturl}}"
 					],
 					"path": [
 						"pet"
@@ -51,17 +87,32 @@
 		},
 		{
 			"name": "Unavailable pet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/pet/8000",
+					"raw": "{{peturl}}/pet/{{id}}",
 					"host": [
-						"{{url}}"
+						"{{peturl}}"
 					],
 					"path": [
 						"pet",
-						"8000"
+						"{{id}}"
 					]
 				}
 			},
@@ -69,12 +120,32 @@
 		},
 		{
 			"name": "Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//check status code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//check status string value\r",
+							"\r",
+							"pm.test(\"Check Name updated\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Sweety\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"PUG\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"Hello\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"PUG\"\r\n  },\r\n  \"name\": \"Sweety\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"Hello\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,9 +153,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/pet/",
+					"raw": "{{peturl}}/pet/",
 					"host": [
-						"{{url}}"
+						"{{peturl}}"
 					],
 					"path": [
 						"pet",
@@ -96,13 +167,33 @@
 		},
 		{
 			"name": "Pets Sold",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//check status code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//check status string value\r",
+							"    pm.test(\"Body matches sold\", function () {\r",
+							"        pm.expect(pm.response.text()).to.include(\"sold\");\r",
+							"    });\r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/pet/findByStatus?status=sold",
+					"raw": "{{peturl}}/pet/findByStatus?status=sold",
 					"host": [
-						"{{url}}"
+						"{{peturl}}"
 					],
 					"path": [
 						"pet",
@@ -120,6 +211,26 @@
 		},
 		{
 			"name": "Pets Available",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//check status code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//check status string value\r",
+							"\r",
+							"pm.test(\"Checks the pets are  available\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"available\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -144,17 +255,43 @@
 		},
 		{
 			"name": "Pets Pending",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//check status code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//check status string value\r",
+							"\r",
+							"pm.test(\"Checks the pets are Pending\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"pending\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/pet/6",
+					"raw": "{{peturl}}/pet/findByStatus?status=pending",
 					"host": [
-						"{{url}}"
+						"{{peturl}}"
 					],
 					"path": [
 						"pet",
-						"6"
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "pending"
+						}
 					]
 				}
 			},
@@ -173,6 +310,85 @@
 					"path": [
 						"pet",
 						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new pet to the store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"petId\": 2,\r\n  \"quantity\": 1,\r\n  \"shipDate\": \"2021-04-30T10:53:09.700Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{peturl}}/store/order",
+					"host": [
+						"{{peturl}}"
+					],
+					"path": [
+						"store",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pet from store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"   \r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    \r",
+							"});\r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{peturl}}/store/order/{{id}}",
+					"host": [
+						"{{peturl}}"
+					],
+					"path": [
+						"store",
+						"order",
+						"{{id}}"
 					]
 				}
 			},
